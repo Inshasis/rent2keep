@@ -1,0 +1,229 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-30 13:04:14.862579",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_order",
+  "customer",
+  "customer_name",
+  "column_break_4lmps",
+  "start_date",
+  "end_date",
+  "amended_from",
+  "section_break_y2buw",
+  "items",
+  "section_break_kqy1j",
+  "total_qty",
+  "column_break_alohd",
+  "column_break_quc0z",
+  "total_amount",
+  "taxes_section",
+  "tax",
+  "total_tab",
+  "in_words",
+  "column_break_dbzqg",
+  "grand_total",
+  "rounded_total",
+  "section_break_tlsck",
+  "payment_type",
+  "column_break_07dyc",
+  "total_week",
+  "total_month",
+  "total_year",
+  "section_break_ormjk",
+  "payment_schedule"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "reffrence_doctype.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reffrence_doctype.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4lmps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rental Voucher",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_y2buw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Rental Voucher Item"
+  },
+  {
+   "fieldname": "section_break_kqy1j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Int",
+   "label": "Total Qty"
+  },
+  {
+   "fieldname": "column_break_alohd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_quc0z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "taxes_section",
+   "fieldtype": "Section Break",
+   "label": "Taxes"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Table",
+   "label": "Tax",
+   "options": "Rental Voucher Tax"
+  },
+  {
+   "fieldname": "total_tab",
+   "fieldtype": "Tab Break",
+   "label": "Total"
+  },
+  {
+   "fieldname": "in_words",
+   "fieldtype": "Data",
+   "label": "In Words"
+  },
+  {
+   "fieldname": "column_break_dbzqg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "rounded_total",
+   "fieldtype": "Currency",
+   "label": "Rounded Total"
+  },
+  {
+   "fieldname": "section_break_tlsck",
+   "fieldtype": "Tab Break",
+   "label": "Payment"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "label": "Payment Type",
+   "options": "\nWeekly\nMonthly\nYearly",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_07dyc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.payment_type == \"Weekly\"",
+   "fieldname": "total_week",
+   "fieldtype": "Int",
+   "label": "Total Week"
+  },
+  {
+   "depends_on": "eval:doc.payment_type == \"Monthly\"",
+   "fieldname": "total_month",
+   "fieldtype": "Int",
+   "label": "Total Month"
+  },
+  {
+   "depends_on": "eval:doc.payment_type == \"Yearly\"",
+   "fieldname": "total_year",
+   "fieldtype": "Float",
+   "label": "Total Year"
+  },
+  {
+   "fieldname": "section_break_ormjk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_schedule",
+   "fieldtype": "Table",
+   "label": "Payment Schedule",
+   "options": "Rental Payment Schedule"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-11-30 14:03:45.320936",
+ "modified_by": "Administrator",
+ "module": "Rent2Keep Addon",
+ "name": "Rental Voucher",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}
