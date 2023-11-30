@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include rent2keep_addon *.css
+recursive-include rent2keep_addon *.csv
+recursive-include rent2keep_addon *.html
+recursive-include rent2keep_addon *.ico
+recursive-include rent2keep_addon *.js
+recursive-include rent2keep_addon *.json
+recursive-include rent2keep_addon *.md
+recursive-include rent2keep_addon *.png
+recursive-include rent2keep_addon *.py
+recursive-include rent2keep_addon *.svg
+recursive-include rent2keep_addon *.txt
+recursive-exclude rent2keep_addon *.pyc
