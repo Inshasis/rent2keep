@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:RV/{YYYY}/{##}",
  "creation": "2023-11-30 13:04:14.862579",
  "default_view": "List",
  "doctype": "DocType",
@@ -22,7 +23,11 @@
   "column_break_quc0z",
   "total_amount",
   "taxes_section",
-  "tax",
+  "taxes",
+  "section_break_9pmvp",
+  "column_break_4hdib",
+  "column_break_a1xmp",
+  "total_taxes_and_charges",
   "total_tab",
   "in_words",
   "column_break_dbzqg",
@@ -47,7 +52,7 @@
    "reqd": 1
   },
   {
-   "fetch_from": "reffrence_doctype.customer",
+   "fetch_from": "sales_order.customer",
    "fieldname": "customer",
    "fieldtype": "Link",
    "label": "Customer",
@@ -55,7 +60,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "reffrence_doctype.customer_name",
+   "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
    "label": "Customer Name",
@@ -75,8 +80,7 @@
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "End Date",
-   "reqd": 1
+   "label": "End Date"
   },
   {
    "fieldname": "amended_from",
@@ -117,7 +121,8 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "taxes_section",
@@ -125,14 +130,8 @@
    "label": "Taxes"
   },
   {
-   "fieldname": "tax",
-   "fieldtype": "Table",
-   "label": "Tax",
-   "options": "Rental Voucher Tax"
-  },
-  {
    "fieldname": "total_tab",
-   "fieldtype": "Tab Break",
+   "fieldtype": "Section Break",
    "label": "Total"
   },
   {
@@ -160,6 +159,7 @@
    "label": "Payment"
   },
   {
+   "default": "Weekly",
    "fieldname": "payment_type",
    "fieldtype": "Select",
    "label": "Payment Type",
@@ -197,15 +197,39 @@
    "fieldtype": "Table",
    "label": "Payment Schedule",
    "options": "Rental Payment Schedule"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "Taxes",
+   "options": "Rental Voucher Tax"
+  },
+  {
+   "fieldname": "section_break_9pmvp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_4hdib",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_taxes_and_charges",
+   "fieldtype": "Currency",
+   "label": "Total Taxes and Charges"
+  },
+  {
+   "fieldname": "column_break_a1xmp",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-11-30 14:03:45.320936",
+ "modified": "2023-11-30 15:10:20.944828",
  "modified_by": "Administrator",
  "module": "Rent2Keep Addon",
  "name": "Rental Voucher",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
