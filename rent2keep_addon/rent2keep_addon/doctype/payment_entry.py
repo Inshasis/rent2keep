@@ -7,7 +7,7 @@ import frappe
 @frappe.whitelist(allow_guest=True)
 def create_rental_voucher(doc):
     doc = json.loads(doc)
-
+    
     create_so_to_rv = frappe.get_doc({
             "doctype": "Rental Voucher",
             "sales_order": doc.get("name"),

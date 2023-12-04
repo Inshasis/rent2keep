@@ -118,13 +118,11 @@ doctype_js = {"Sales Order" : "public/js/sales_order.js"}
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Sales Invoice": {
+		"validate": "rent2keep_addon.rent2keep_addon.doctype.sales_invoice.validate"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
