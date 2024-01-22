@@ -350,7 +350,7 @@
   },
   {
    "fieldname": "type_of_gov_benefit_or_other_income",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "label": "Type of Gov Benefit or Other Income"
   },
   {
@@ -359,7 +359,7 @@
   },
   {
    "fieldname": "income_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "label": "Income P/F"
   },
   {
@@ -368,7 +368,7 @@
   },
   {
    "fieldname": "household_expenses_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Household Expenses P/F"
   },
   {
@@ -377,7 +377,7 @@
   },
   {
    "fieldname": "rentmortgage_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Rent/Mortgage P/F"
   },
   {
@@ -386,7 +386,7 @@
   },
   {
    "fieldname": "car_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Car P/F"
   },
   {
@@ -399,7 +399,7 @@
   },
   {
    "fieldname": "phone_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Phone P/F"
   },
   {
@@ -408,7 +408,7 @@
   },
   {
    "fieldname": "health_insurance_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Health Insurance P/F"
   },
   {
@@ -417,7 +417,7 @@
   },
   {
    "fieldname": "food_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Food P/F"
   },
   {
@@ -430,7 +430,7 @@
   },
   {
    "fieldname": "loans_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Loans P/F"
   },
   {
@@ -439,7 +439,7 @@
   },
   {
    "fieldname": "other_expenses_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Other Expenses P/F"
   },
   {
@@ -448,7 +448,7 @@
   },
   {
    "fieldname": "other_rentals_pf",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Other Rentals P/F"
   },
   {
@@ -491,7 +491,8 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_fei0b",
@@ -513,7 +514,8 @@
   {
    "fieldname": "total_income",
    "fieldtype": "Currency",
-   "label": "Total Income"
+   "label": "Total Income",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_8bzjn",
@@ -522,7 +524,8 @@
   {
    "fieldname": "total_expenses",
    "fieldtype": "Currency",
-   "label": "Total Expenses"
+   "label": "Total Expenses",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_juxpg",
@@ -531,12 +534,13 @@
   {
    "fieldname": "total_saving",
    "fieldtype": "Currency",
-   "label": "Total Saving"
+   "label": "Total Saving",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-22 14:17:33.094670",
+ "modified": "2024-01-22 14:44:19.971812",
  "modified_by": "Administrator",
  "module": "Rent2Keep Addon",
  "name": "Enquiry",
