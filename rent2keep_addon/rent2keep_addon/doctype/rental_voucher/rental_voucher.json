@@ -34,11 +34,11 @@
   "grand_total",
   "rounded_total",
   "section_break_tlsck",
-  "payment_type",
+  "instalment_type",
   "column_break_07dyc",
-  "total_week",
-  "total_month",
-  "total_year",
+  "total_instalments",
+  "column_break_10i21",
+  "instalment_amount",
   "section_break_ormjk",
   "payment_schedule"
  ],
@@ -159,34 +159,8 @@
    "label": "Payment"
   },
   {
-   "default": "Weekly",
-   "fieldname": "payment_type",
-   "fieldtype": "Select",
-   "label": "Payment Type",
-   "options": "\nWeekly\nMonthly\nYearly",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_07dyc",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.payment_type == \"Weekly\"",
-   "fieldname": "total_week",
-   "fieldtype": "Int",
-   "label": "Total Week"
-  },
-  {
-   "depends_on": "eval:doc.payment_type == \"Monthly\"",
-   "fieldname": "total_month",
-   "fieldtype": "Int",
-   "label": "Total Month"
-  },
-  {
-   "depends_on": "eval:doc.payment_type == \"Yearly\"",
-   "fieldname": "total_year",
-   "fieldtype": "Float",
-   "label": "Total Year"
   },
   {
    "fieldname": "section_break_ormjk",
@@ -220,12 +194,31 @@
   {
    "fieldname": "column_break_a1xmp",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "instalment_type",
+   "fieldtype": "Data",
+   "label": "Instalment Type"
+  },
+  {
+   "fieldname": "total_instalments",
+   "fieldtype": "Int",
+   "label": "Total Instalments"
+  },
+  {
+   "fieldname": "column_break_10i21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "instalment_amount",
+   "fieldtype": "Currency",
+   "label": "Instalment Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-11-30 15:10:20.944828",
+ "modified": "2024-01-23 15:05:27.982108",
  "modified_by": "Administrator",
  "module": "Rent2Keep Addon",
  "name": "Rental Voucher",

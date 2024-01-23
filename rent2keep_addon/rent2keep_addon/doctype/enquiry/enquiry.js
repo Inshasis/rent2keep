@@ -30,6 +30,19 @@ frappe.ui.form.on("Enquiry", "refresh", function(frm) {
         frm.save();
         
     }).addClass("btn-warning").css({'background-color':'#2490ef','color':'white','font-weight': 'normal'});
+
+    frm.add_custom_button(__("Convert into SO"), function() {
+        frappe.call({
+        method: "rent2keep_addon.rent2keep_addon.doctype.enquiry.enquiry.so_create",
+        args:{
+            doc:cur_frm.doc,
+        },
+        callback:function(r){
+            console.log("*************** Sales Order Created *******************");
+        }
+        });
+        
+    }).addClass("btn-warning").css({'background-color':'#A62F03','color':'white','font-weight': 'normal'});
 });
 
-   
+
