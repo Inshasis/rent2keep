@@ -3,6 +3,8 @@
 
 import json
 import frappe
+from frappe.utils import add_to_date
+from datetime import datetime
 
 @frappe.whitelist(allow_guest=True)
 def create_rental_voucher(doc):
@@ -13,11 +15,14 @@ def create_rental_voucher(doc):
         so_to_rv = frappe.get_list('Rental Voucher', fields=['sales_order'])
         check = {'sales_order': doc.get("name")}    
 
+        end_date = add_to_date(doc.get("delivery_date"), days=10, as_string=True)
+
         if check not in so_to_rv:
                 create_so_to_rv = frappe.get_doc({
                         "doctype": "Rental Voucher",
                         "sales_order": doc.get("name"),
                         "start_date": doc.get("delivery_date"),
+                        "end_date":end_date,
                         "total_qty": doc.get("total_qty"),
                         "total_amount": doc.get("total"),
                         "total_taxes_and_charges":doc.get("total_taxes_and_charges"),
