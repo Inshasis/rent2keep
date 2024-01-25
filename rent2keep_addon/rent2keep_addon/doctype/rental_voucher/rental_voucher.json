@@ -169,7 +169,6 @@
   {
    "fieldname": "payment_schedule",
    "fieldtype": "Table",
-   "hidden": 1,
    "label": "Payment Schedule",
    "options": "Rental Payment Schedule"
   },
@@ -219,7 +218,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-01-23 15:28:33.688260",
+ "modified": "2024-01-25 13:44:47.876164",
  "modified_by": "Administrator",
  "module": "Rent2Keep Addon",
  "name": "Rental Voucher",

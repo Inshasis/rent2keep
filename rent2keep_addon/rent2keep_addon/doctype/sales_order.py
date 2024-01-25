@@ -15,7 +15,16 @@ def create_rental_voucher(doc):
         so_to_rv = frappe.get_list('Rental Voucher', fields=['sales_order'])
         check = {'sales_order': doc.get("name")}    
 
-        end_date = add_to_date(doc.get("delivery_date"), days=10, as_string=True)
+        if instalment_type == "weekly":
+                dy = instalments * 7
+                end_date = add_to_date(doc.get("delivery_date"), days=dy, as_string=True)
+        
+        elif instalment_type == "biweekly":
+                dy = instalments * 14
+                end_date = add_to_date(doc.get("delivery_date"), days=dy, as_string=True)
+        else:
+                dy = instalments * 30.5
+                end_date = add_to_date(doc.get("delivery_date"), days=dy, as_string=True)
 
         if check not in so_to_rv:
                 create_so_to_rv = frappe.get_doc({
